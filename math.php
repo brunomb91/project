@@ -11,6 +11,7 @@ $v2 = $_GET["y"];
 echo "<p>$v1 + $v2 = "; 
 echo $_GET["x"] + $_GET["y"]; 
 echo "</p>";
+echo '<a href="math.html">Voltar</a>';
 ?>
 
 </body>
