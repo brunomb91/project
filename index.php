@@ -147,19 +147,22 @@ for ($i=0; $i< count($array); $i++) {
 }
 
 class Extintor {
-    public $tamanho;
+    private $tamanho;
     public $capacidade;
     public $cor;
     public $peso;
     public $conteudo;
 
     function __construct($tamanho, $capacidade, $cor, $peso, $conteudo) {
-        //$this->tamanho = $tamanho;
         $this->tamanho = $tamanho;
         $this->capacidade = $capacidade;
         $this->cor = $cor;
         $this->peso = $peso;
         $this->conteudo = $conteudo;
+    }
+
+    function __destruct() {
+        echo "<br><b>Acabou!</b>";
     }
 
     public function apaga_fogo() {
@@ -175,21 +178,34 @@ class Extintor {
     }
 
     public function info() {
-        return "<p>Tamanho: </p>".$this->tamanho.
+        echo "<p>Tamanho: </p>".$this->tamanho.
                "<p>Capacidade: </p>".$this->capacidade.
                "<p>Cor: </p>".$this->cor.
                "<p>Peso: </p>".$this->peso.
                "<p>Conteudo: </p>".$this->conteudo;
     }
 
+    public function get_tamanho() {
+        echo $this->tamanho;
+    }
+
+    public function set_tamanho($tamanho) {
+        $this->tamanho = $tamanho;
+    }
 }
 
 $obj = new Extintor(50, 10, "Vermelha", 6, "Bicarbonato de Sódio");
+
+$obj->peso = 10;
+
+$obj->set_tamanho(40);
 
 $obj->apaga_fogo();
 $obj->vistoria();
 $obj->carregar();
 $obj->info();
+
+$obj->get_tamanho();
 
 ?>
 
