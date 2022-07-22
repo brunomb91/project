@@ -19,6 +19,21 @@ function myTest() {
     echo "<p>Escopo da função myTest().</p>";
 }
 
+echo "<h3>Como enviar código para um repositório Github:</h3>
+      <p>Criar repositório no Github.</p>
+      <p>Instalar o Git no seu computador.</p>
+      <p>Abra um terminal e digite:</p>
+      <p>git clone [<i>Link do repositório</i>].</p>
+      <p>Acesse o diretório onde estão contidos os arquivos do repositório e digite:</p>
+      <p>git add [nome do(s) arquivo(s)]</p>
+      <p>Se quiser enviar todos os arquivos, digite:</p>
+      <p>git add .</p>
+      <p>Fazer o <i>commit</i>, que é especificar a mudança nos arquivos do repositório. Você o faz com o seguinte comando:</p>
+      <p>git commit -m 'Mensagem'</p>
+      <p>E por último, selecionar a <i>branch</i> para onde vão os arquivos:</p>
+      <p>git push -u origin [noem da branch]</p>
+";
+
 $txt = "Hello world!";
 $txt1 = "PHP";
 
@@ -122,6 +137,59 @@ echo addNumbers();
 echo "</p>";
 
 echo '<a href="/project/math.html">Calcule uma soma aqui.</a>';
+
+foreach ($array as $truck) {
+    print "<br>".$truck."<br>";
+}
+
+for ($i=0; $i< count($array); $i++) {
+    print "<br>".$array[$i]."<br>";
+}
+
+class Extintor {
+    public $tamanho;
+    public $capacidade;
+    public $cor;
+    public $peso;
+    public $conteudo;
+
+    function __construct($tamanho, $capacidade, $cor, $peso, $conteudo) {
+        //$this->tamanho = $tamanho;
+        $this->tamanho = $tamanho;
+        $this->capacidade = $capacidade;
+        $this->cor = $cor;
+        $this->peso = $peso;
+        $this->conteudo = $conteudo;
+    }
+
+    public function apaga_fogo() {
+        echo "<br>Fogo apagado.<br>";
+    }
+
+    public function vistoria() {
+        echo "<br>Vistoriado<br>";
+    }
+
+    public function carregar() {
+        echo "<br>Extintor carregado.<br>";
+    }
+
+    public function info() {
+        return "<p>Tamanho: </p>".$this->tamanho.
+               "<p>Capacidade: </p>".$this->capacidade.
+               "<p>Cor: </p>".$this->cor.
+               "<p>Peso: </p>".$this->peso.
+               "<p>Conteudo: </p>".$this->conteudo;
+    }
+
+}
+
+$obj = new Extintor(50, 10, "Vermelha", 6, "Bicarbonato de Sódio");
+
+$obj->apaga_fogo();
+$obj->vistoria();
+$obj->carregar();
+$obj->info();
 
 ?>
 
